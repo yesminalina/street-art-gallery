@@ -1,0 +1,14 @@
+.nav-bar {
+  background-color: #068DA9;
+  color: #B80D57;
+  opacity: 75%;
+}
+
+.nav-bar a {
+  color: #B80D57;
+  text-decoration: none;
+}
+
+.brand-text {
+  color: #B80D57;
+}
