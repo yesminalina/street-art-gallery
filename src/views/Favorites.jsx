@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { PictureContext } from '../context/PictureContext'
 import emptyImg from '../assets/img/empty.jpeg'
+import IconHeart from '../components/IconHeart'
 
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
@@ -10,7 +11,7 @@ import Stack from 'react-bootstrap/Stack'
 import '../assets/css/Favorites.css'
 
 const Favorites = () => {
-  const { filterLiked } = useContext(PictureContext)
+  const { filterLiked, changeLike } = useContext(PictureContext)
 
   return (
     <div>
@@ -21,6 +22,9 @@ const Favorites = () => {
             <Col key={favPicture.id}>
               <Card className='card'>
                 <Card.Img className='img-fluid m-0 p-0' src={favPicture.src.landscape} />
+                <button className='btn-like' onClick={() => changeLike(favPicture.id)}>
+                  <IconHeart filled={favPicture.liked} />
+                </button>
                 <Stack direction='horizontal' gap={2} className='badges'>
                   <Badge bg='warning'>Artista: {favPicture.photographer}</Badge>
                 </Stack>
